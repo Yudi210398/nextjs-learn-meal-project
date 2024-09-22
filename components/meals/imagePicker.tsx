@@ -3,7 +3,6 @@
 import { useRef, useState } from "react";
 import classes from "./imagePicker.module.css";
 import Image from "next/image";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 interface DataImagePicker {
   name?: string;

@@ -11,6 +11,7 @@ export interface SlugData {
 async function getSlugId(params: string): Promise<SlugData> {
   const res = await fetch(`http://localhost:3001/recipe/cari/${params}`, {
     method: "PATCH",
+    cache: "no-store",
   });
 
   return await res.json();
@@ -30,7 +31,7 @@ export default async function SlugMeal(paramss: Cek) {
   const hasil = await getSlugId(params?.slug);
   if (hasil?.error) throw new Error(hasil?.error);
   if (hasil.pesan) notFound();
-
+  console.log(hasil.image, `wkwk`);
   return (
     <>
       <header className={clases.header}>
