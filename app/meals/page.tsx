@@ -1,6 +1,7 @@
 async function getDatsa() {
   const res = await fetch(`http://localhost:3001/recipe/menumakanan`, {
     method: "GET",
+    cache: "no-store",
   });
 
   return res.json();
